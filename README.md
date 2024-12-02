@@ -11,13 +11,10 @@
 ## Known issues:
 #### Game saving/mods/other recently added features don't work
 1. Open the game  
-2. If you want to preserve your save  
-   2.1. Enable the `Save exporter & importer` mod  
-   2.2. Export your save  
-4. Open site information (top left corner near the url)
-5. Go to **Site settings**
-6. Click **Delete data**
-7. Reload the game and import your save
+2. Open site information (top left corner near the url)
+3. Go to **Site settings**
+4. Click **Delete data**
+5. Reload the game and import your save
 
 
 ## Mods
