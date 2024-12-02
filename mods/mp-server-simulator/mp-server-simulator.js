@@ -1,5 +1,8 @@
 export async function install(){
-	if(localStorage.getItem("username")!=null){}
+	window.open=function(url,target,features){
+		console.log(url,target,features);
+	}
+
 	let username=prompt("Username:","Player");
 	if(!username) return await install();
 	window.XMLHttpRequest=class{
@@ -11,7 +14,7 @@ export async function install(){
 			/**
 			 * @type {"text"|"json"|"arraybuffer"|"blob"}
 			 */
-			this.responseType="text"
+			this.responseType="text";
 		}
 		/**
 		 * 
