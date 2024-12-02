@@ -1,6 +1,13 @@
 export async function install(){
+	const open=window.open;
 	window.open=function(url,target,features){
 		console.log(url,target,features);
+		if(target=="Create server"){
+			open("https://github.com/MeterPreter57/minidayz-multiplayer/releases/tag/server-files",target);
+		}
+		if(target=="Changelog"){
+			open("https://github.com/MeterPreter57/minidayz-multiplayer",target);
+		}
 	}
 
 	let username=prompt("Username:","Player");
@@ -66,7 +73,7 @@ export async function install(){
 					if(!query.get("key")){
 						response({have_game:["SPROCKET2DAYZMINI001"]});
 					}else{
-						response({username:username,username2:username,username3:username});
+						response({token_user:"token_user",username:`${username}`,client_id:"C7VX"});
 					}
 				}
 				if(router=="/saved_game_url/default-char"){
