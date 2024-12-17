@@ -7,8 +7,7 @@
 
 # [Server files](https://github.com/MeterPreter57/minidayz-multiplayer/releases/tag/server-files)
 
-
-# Multiplayer fixed
+# [MiniDayZ SinglePlayer Version](https://github.com/MeterPreter57/MiniDayZ-PC)
 
 ## Known issues:
 #### Game saving/mods/other recently added features don't work
