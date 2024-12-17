@@ -1,7 +1,7 @@
 import "./mods/toolkit.js";
 const {mods}=await (await fetch("../mods.json")).json();
 
-let install=localStorage.getItem("mods") || `["server-simulator"]`;
+let install=localStorage.getItem("mp.mods") || `["mp-server-simulator"]`;
 install=JSON.parse(install);
 
 const link=document.createElement("link");
@@ -192,7 +192,7 @@ async function start(){
 		const e=(await import(`../${branch}mods/${mod.script}/${mod.script}.js`));
 		if(e.install) await e.install();
 	}
-	localStorage.setItem("mods",JSON.stringify(install));
+	localStorage.setItem("mp.mods",JSON.stringify(install));
 	// Create new runtime using the c2canvas
 	window.c2runtime=cr_createRuntime("c2canvas");
 	
