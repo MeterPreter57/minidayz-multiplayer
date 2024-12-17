@@ -6,7 +6,7 @@
 # [Play in Browser](https://raw.githack.com/MeterPreter57/minidayz-multiplayer/main/client/index.html)
 
 
-# Work in progress
+# Multiplayer fixed
 
 ## Known issues:
 #### Game saving/mods/other recently added features don't work

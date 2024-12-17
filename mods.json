@@ -4,7 +4,7 @@
 			"name":"MP Response server simulator",
 			"description":"If you want to play multiplayer mode, this mod must be enabled",
 			"script":"mp-server-simulator",
-			"version":"1.0.0-beta"
+			"version":"1.0.0"
 		},
 		{
 			"name":"Clear cache",

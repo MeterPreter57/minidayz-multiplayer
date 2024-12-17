@@ -1,17 +1,23 @@
 export async function install(){
 	const open=window.open;
 	window.open=function(url,target,features){
-		console.log(url,target,features);
 		if(target=="Create server"){
-			open("https://github.com/MeterPreter57/minidayz-multiplayer/releases/tag/server-files",target);
+			return open("https://github.com/MeterPreter57/minidayz-multiplayer/releases/tag/server-files",target);
 		}
 		if(target=="Changelog"){
-			open("https://github.com/MeterPreter57/minidayz-multiplayer",target);
+			return open("https://github.com/MeterPreter57/minidayz-multiplayer",target);
 		}
+		open(url,target,features);
 	}
 
-	let username=prompt("Username:","Player");
+	let username;
+	if(localStorage.getItem("username")!=null){
+		username=localStorage.getItem("username");
+	}else{
+		username=prompt("Username:","MiniPlayer");
+	}
 	if(!username) return await install();
+	localStorage.setItem("username",username);
 	window.XMLHttpRequest=class{
 		constructor(){
 			this.readyState=4;
@@ -36,7 +42,7 @@ export async function install(){
 			const that=this;
 			this.body=body;
 			this.response=this.responseText="";
-			if(this.method=="GET" && this.url.indexOf(".")>-1) return fetch(this.url).then(async function(res){
+			if(this.method=="GET" && this.url.indexOf(".")>-1 && !this.url.startsWith("https://oauth.bistudio.com")) return fetch(this.url).then(async function(res){
 				if(that.responseType=="text") that.response=that.responseText=await res.text();
 				if(that.responseType=="json") that.response=that.responseText=await res.json();
 				if(that.responseType=="arraybuffer") that.response=that.responseText=await res.arrayBuffer();
@@ -58,13 +64,12 @@ export async function install(){
 			let router=this.url;
 			if(this.url.indexOf("?")!=-1) router=this.url.split("?")[0];
 			if(!router.startsWith("/")) router=`/${router}`;
-			// console.log(method,router,query,body);
 			function response(object){
 				that.status=200;
 				that.responseText=JSON.stringify(object);
-				console.log("✅",that.responseText);
+				// console.log("✅",that.responseText);
 			}
-			console.log("➡️",method,router,"QUERY:",query,"BODY:",body)
+			// console.log("➡️",method,router,"QUERY:",query,"BODY:",body)
 			if(method=="GET"){
 				if(router=="/api/auth"){
 					response({token_user:"token_user",token_refresh:"true",client_id:"C7VX",bi_account_url:"bi_account_url",user_data_url:"user_data_url",saved_game_url:"saved_game_url/"});
