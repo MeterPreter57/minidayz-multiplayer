@@ -4,7 +4,7 @@
 ### Mods support added
 
 ## Thanks to [Meterpeter57](https://github.com/MeterPreter57) for finding all the server files and maps
-## Thanks to [W84Soft](https://github.com/W84Soft/) for creating the mods that fix the game
+## Thanks to [Alpha Systems](https://github.com/AlphaSystemsPL/) for creating the mods that fix the game
 
 
 # [Play in Browser](https://raw.githack.com/MeterPreter57/minidayz-multiplayer/main/client/index.html)
